@@ -1,3 +1,8 @@
+
+# libcsv
+
+> Just a fork to replace autotool with meson for modern project
+
 Installation
 ------------
 The libcsv library may be installed using the package management software included
