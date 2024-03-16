@@ -13,9 +13,10 @@ libcsv = shared_library('csv',
     install: true
 )
 
+libcsv_deps = declare_dependency(include_directories : inc,
+  link_with : libcsv)
 
 executable('testcsv', 'test_csv.c', include_directories: inc, link_with: [libcsv])
-
 
 pkg_mod = import('pkgconfig')
 pkg_mod.generate(libraries : libcsv,
@@ -23,3 +24,4 @@ pkg_mod.generate(libraries : libcsv,
                  name : 'libcsv',
                  filebase : 'csv',
                  description : 'Fast CSV parser')
+
